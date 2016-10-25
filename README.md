@@ -14,8 +14,10 @@ If the above is complete,you can run gulp serve in the task.
 Not surprisingly, you will see a browser：
 不坑爹的话，你会在浏览器看到以下内容， 说明你成功了。
 
+<hr>
 <h1>主页</h1>
 <a href="#">登录</a>
+<hr>
 
 Next, I will continue to complete the project.
 接下来，我会继续完善此项目。
