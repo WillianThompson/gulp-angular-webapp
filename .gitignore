@@ -11,9 +11,11 @@ test/bower_components
 .idea/.name
 .idea/encodings.xml
 .idea/gulp-angular-webapp.iml
+.idea/
 .idea/misc.xml
 .idea/modules.xml
 .idea/workspace.xml
+.idea/libraries/gulp_angular_webapp_node_modules.xml
 #.yo-rc.json
 #app/apple-touch-icon.png
 #app/favicon.ico
