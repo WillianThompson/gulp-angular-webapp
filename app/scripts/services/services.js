@@ -2,5 +2,6 @@
 
 var appServices = angular.module('appServices',
   [
-    'appService'
+    'appService',
+    'commonService'
   ]);
