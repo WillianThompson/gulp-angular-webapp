@@ -1,1 +1,12 @@
-<h1>登录</h1>
+<h1 class="ui top attached header">登录</h1>
+<form ng-submit="login()" class="ui form attached segment" form-valid novalidate="novalidate">
+  <div class="ui left icon input">
+    <input type="text" ng-model="userName" placeholder="请输入用户名">
+    <i class="user icon"></i>
+  </div>
+  <div class="ui left icon input">
+    <input type="password" ng-model="password" placeholder="请输入密码">
+    <i class="lock icon"></i>
+  </div>
+  <button class="ui primary button" type="submit">登录</button>
+</form>

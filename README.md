@@ -18,8 +18,9 @@
 <p>不坑爹的话，你会在浏览器看到以下内容， 说明你成功了。</p>
 
 <hr>
+<h1>全局控制器测试成功</h1>
 <h1>主页</h1>
-<a href="#">登录</a>
+<button>登录</button>
 <hr>
 
 <p>Next, I will continue to complete the project.</p>

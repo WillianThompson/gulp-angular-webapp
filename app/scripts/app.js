@@ -2,13 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name privilegeManagerApp
+ * @name MyWebApp
  * @description
- * # privilegeManagerApp
+ * # MyWebApp
  *
- * Main module of the application.
+ * Main module of the application.所有模块的入口。
+ * 每个模块有很多子模块。只要引用最上级的模块即可。
  */
-var privilegeManagerApp = angular
+var webApp = angular
   .module('MyWebApp', [
     'ngAnimate',
     'ngCookies',
@@ -19,8 +20,21 @@ var privilegeManagerApp = angular
     'ngTouch',
     'oc.lazyLoad',
 
+    'interceptor',
     'appControllers',
     'appServices',
     'appRoutes',
-    'appDirective'
+    'appDirective',
+    'appFilter'
   ]);
+
+webApp.config(['$locationProvider', '$httpProvider',
+  function ($locationProvider, $httpProvider) {
+    $httpProvider.interceptors.push('httpInterceptor');
+  }]);
+
+//angular中两种写法。里面function(){}可以没有['引用的模块']
+//webApp.config(
+// function ($locationProvider, $httpProvider) {
+//  $httpProvider.interceptors.push('httpInterceptor');
+//});

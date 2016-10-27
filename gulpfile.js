@@ -1,4 +1,4 @@
-// generated on 2016-10-24 using generator-webapp 2.2.0
+// generated on 2016-10-19 using generator-webapp 2.2.0
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
@@ -42,6 +42,7 @@ gulp.task('lint', () => {
   })
     .pipe(gulp.dest('app/scripts'));
 });
+
 gulp.task('lint:test', () => {
   return lint('test/spec/**/*.js', {
     fix: true,
@@ -53,12 +54,12 @@ gulp.task('lint:test', () => {
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
-  return gulp.src('app/*.html')
+  return gulp.src('app/views/**/*')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
     .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist/views'));
 });
 
 gulp.task('images', () => {
@@ -78,7 +79,7 @@ gulp.task('fonts', () => {
 gulp.task('extras', () => {
   return gulp.src([
     'app/*',
-    '!app/*.html'
+    'app/*.html'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
@@ -101,6 +102,7 @@ gulp.task('serve', () => {
 
     gulp.watch([
       'app/*.html',
+      'app/views/**/*.html',
       'app/images/**/*',
       '.tmp/fonts/**/*'
     ]).on('change', reload);
